@@ -1,0 +1,8 @@
+# Generated Rofi cache
+.cache/
+rofi-file-search.cache
+
+# Temporary files
+*.tmp
+*.swp
+*~

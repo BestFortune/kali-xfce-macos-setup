@@ -1,0 +1,91 @@
+configuration {
+    show-icons: true;
+    drun-display-format: "{name}";
+    display-drun: "Search";
+}
+
+* {
+    font: "Sans 12";
+
+    background: #111111;
+    background-alt: #1b1b1b;
+    foreground: #ffffff;
+    selected: #303030;
+    border-color: #3a3a3a;
+    placeholder: #888888;
+}
+
+/* Main window */
+window {
+    width: 620px;
+    background-color: @background;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 22px;
+    padding: 16px;
+}
+
+/* Main container */
+mainbox {
+    background-color: @background;
+    children: [ inputbar, listview ];
+    spacing: 12px;
+}
+
+/* Search box */
+inputbar {
+    background-color: @background-alt;
+    border-radius: 14px;
+    padding: 12px 16px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @placeholder;
+    padding: 0px 8px 0px 0px;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder: "Search applications...";
+    placeholder-color: @placeholder;
+}
+
+/* Application list */
+listview {
+    background-color: transparent;
+    lines: 6;
+    columns: 1;
+    spacing: 5px;
+    scrollbar: false;
+    fixed-height: false;
+}
+
+/* Individual application */
+element {
+    background-color: transparent;
+    text-color: @foreground;
+    border-radius: 12px;
+    padding: 9px 12px;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: #ffffff;
+}
+
+/* Application icons */
+element-icon {
+    background-color: transparent;
+    size: 38px;
+    margin: 0px 14px 0px 2px;
+}
+
+/* Application names */
+element-text {
+    background-color: transparent;
+    text-color: #ffffff;
+    vertical-align: 0.5;
+}

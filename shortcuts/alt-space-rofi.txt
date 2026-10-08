@@ -1,0 +1,4 @@
+Shortcut: Alt+Space
+
+Command:
+rofi -modi "combi,drun,file-search:/home/bestfortune/.local/bin/rofi-file-search" -combi-modi "drun,file-search" -show combi -show-icons -theme /home/bestfortune/.config/rofi/mac-style.rasi

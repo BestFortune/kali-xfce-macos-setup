@@ -1,0 +1,7 @@
+[Unit]
+Description=Update Rofi file search cache
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/update-file-search-cache
+

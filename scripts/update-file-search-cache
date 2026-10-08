@@ -1,0 +1,33 @@
+#!/bin/bash
+
+CACHE="$HOME/.cache/rofi-file-search"
+TMP="$CACHE.tmp"
+
+mkdir -p "$HOME/.cache"
+
+fdfind \
+    --hidden \
+    --exclude .cache \
+    --exclude .config \
+    --exclude .local \
+    --exclude .mozilla \
+    --exclude .zen \
+    --exclude .var \
+    --exclude .steam \
+    . "$HOME" 2>/dev/null |
+while IFS= read -r path; do
+
+    name=$(basename "$path")
+
+    if [ -d "$path" ]; then
+        icon="folder"
+    else
+        icon="text-x-generic"
+    fi
+
+    printf '%s\0icon\x1f%s\0info\x1fFILE|%s\n' \
+        "$name" "$icon" "$path"
+
+done > "$TMP"
+
+mv "$TMP" "$CACHE"
